@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5648804D2C360969002CBEDF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648804B2C360969002CBEDF /* CategoryCollectionViewCell.swift */; };
+		5648804E2C360969002CBEDF /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5648804C2C360969002CBEDF /* CategoryCollectionViewCell.xib */; };
+		564880512C360AFD002CBEDF /* DishCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564880502C360AFD002CBEDF /* DishCategoryModel.swift */; };
+		564880532C36106E002CBEDF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564880522C36106E002CBEDF /* String+Extension.swift */; };
+		564880562C36170A002CBEDF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564880552C36170A002CBEDF /* CardView.swift */; };
 		56AA4A482C35907200F2A0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A472C35907200F2A0B0 /* AppDelegate.swift */; };
 		56AA4A4A2C35907200F2A0B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A492C35907200F2A0B0 /* SceneDelegate.swift */; };
 		56AA4A4F2C35907200F2A0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA4A4D2C35907200F2A0B0 /* Main.storyboard */; };
@@ -18,9 +23,15 @@
 		56AA4A692C35A1DF00F2A0B0 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A682C35A1DF00F2A0B0 /* OnboardingSlide.swift */; };
 		56AA4A6B2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A6A2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift */; };
 		56AA4A6E2C35B87E00F2A0B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A6D2C35B87E00F2A0B0 /* HomeViewController.swift */; };
+		EAB812C859296AFA306BC1C3 /* Pods_Yummie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D28CA06AD073125B2277B8 /* Pods_Yummie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5648804B2C360969002CBEDF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		5648804C2C360969002CBEDF /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		564880502C360AFD002CBEDF /* DishCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryModel.swift; sourceTree = "<group>"; };
+		564880522C36106E002CBEDF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		564880552C36170A002CBEDF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		56AA4A442C35907200F2A0B0 /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AA4A472C35907200F2A0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56AA4A492C35907200F2A0B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +45,9 @@
 		56AA4A682C35A1DF00F2A0B0 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		56AA4A6A2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AA4A6D2C35B87E00F2A0B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5D28CA06AD073125B2277B8 /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF87ECB783CC4C89298360C /* Pods-Yummie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.release.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.release.xcconfig"; sourceTree = "<group>"; };
+		EF6E99E1397E4B885EF6DD93 /* Pods-Yummie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.debug.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +55,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB812C859296AFA306BC1C3 /* Pods_Yummie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		564880492C360910002CBEDF /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5648804A2C360924002CBEDF /* CategoryCollectionViewCell */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		5648804A2C360924002CBEDF /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5648804B2C360969002CBEDF /* CategoryCollectionViewCell.swift */,
+				5648804C2C360969002CBEDF /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		5648804F2C360AF1002CBEDF /* DishCategoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				564880502C360AFD002CBEDF /* DishCategoryModel.swift */,
+			);
+			path = DishCategoryModel;
+			sourceTree = "<group>";
+		};
+		564880542C3616F9002CBEDF /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				564880552C36170A002CBEDF /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
 		56AA4A3B2C35907100F2A0B0 = {
 			isa = PBXGroup;
 			children = (
 				56AA4A462C35907200F2A0B0 /* Yummie */,
 				56AA4A452C35907200F2A0B0 /* Products */,
+				705C77DDB52D09B89A45823C /* Pods */,
+				89B0A74A24CADEBC0DB38080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +132,7 @@
 		56AA4A5E2C359B5800F2A0B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5648804F2C360AF1002CBEDF /* DishCategoryModel */,
 				56AA4A672C35A1CA00F2A0B0 /* OnboardingModel */,
 			);
 			path = Models;
@@ -101,6 +152,8 @@
 		56AA4A602C359B6200F2A0B0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				564880542C3616F9002CBEDF /* CardView */,
+				564880492C360910002CBEDF /* CollectionViewCells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -118,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				56AA4A652C359EB400F2A0B0 /* UIView+Extension.swift */,
+				564880522C36106E002CBEDF /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,6 +192,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		705C77DDB52D09B89A45823C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF6E99E1397E4B885EF6DD93 /* Pods-Yummie.debug.xcconfig */,
+				EEF87ECB783CC4C89298360C /* Pods-Yummie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		89B0A74A24CADEBC0DB38080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5D28CA06AD073125B2277B8 /* Pods_Yummie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56AA4A5B2C35907300F2A0B0 /* Build configuration list for PBXNativeTarget "Yummie" */;
 			buildPhases = (
+				3A0B5F786FF4EEE06A55A751 /* [CP] Check Pods Manifest.lock */,
 				56AA4A402C35907200F2A0B0 /* Sources */,
 				56AA4A412C35907200F2A0B0 /* Frameworks */,
 				56AA4A422C35907200F2A0B0 /* Resources */,
+				ABC8070321F7418A64900BE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5648804E2C360969002CBEDF /* CategoryCollectionViewCell.xib in Resources */,
 				56AA4A572C35907300F2A0B0 /* LaunchScreen.storyboard in Resources */,
 				56AA4A542C35907300F2A0B0 /* Assets.xcassets in Resources */,
 				56AA4A4F2C35907200F2A0B0 /* Main.storyboard in Resources */,
@@ -204,18 +278,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A0B5F786FF4EEE06A55A751 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yummie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC8070321F7418A64900BE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yummie/Pods-Yummie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yummie/Pods-Yummie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yummie/Pods-Yummie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56AA4A402C35907200F2A0B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				56AA4A522C35907200F2A0B0 /* Yummie.xcdatamodeld in Sources */,
+				564880532C36106E002CBEDF /* String+Extension.swift in Sources */,
 				56AA4A632C359B9E00F2A0B0 /* OnboardingViewController.swift in Sources */,
 				56AA4A482C35907200F2A0B0 /* AppDelegate.swift in Sources */,
 				56AA4A6E2C35B87E00F2A0B0 /* HomeViewController.swift in Sources */,
+				5648804D2C360969002CBEDF /* CategoryCollectionViewCell.swift in Sources */,
+				564880512C360AFD002CBEDF /* DishCategoryModel.swift in Sources */,
 				56AA4A662C359EB400F2A0B0 /* UIView+Extension.swift in Sources */,
 				56AA4A692C35A1DF00F2A0B0 /* OnboardingSlide.swift in Sources */,
 				56AA4A6B2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift in Sources */,
+				564880562C36170A002CBEDF /* CardView.swift in Sources */,
 				56AA4A4A2C35907200F2A0B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +478,7 @@
 		};
 		56AA4A5C2C35907300F2A0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF6E99E1397E4B885EF6DD93 /* Pods-Yummie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -385,6 +506,7 @@
 		};
 		56AA4A5D2C35907300F2A0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEF87ECB783CC4C89298360C /* Pods-Yummie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
