@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DishesCollectionViewCell" customModule="Yummie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xq-yo-smv" customClass="CardView" customModule="Yummie" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GAM-Mo-wob">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="292"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jZI-aX-tht">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="262.33333333333331"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZHw-g8-Kiz">
+                                        <rect key="frame" x="0.0" y="270.33333333333331" width="180" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GAM-Mo-wob" firstAttribute="leading" secondItem="1xq-yo-smv" secondAttribute="leading" id="8dR-GX-D0h"/>
+                            <constraint firstItem="GAM-Mo-wob" firstAttribute="top" secondItem="1xq-yo-smv" secondAttribute="top" id="EXX-uj-R9y"/>
+                            <constraint firstAttribute="bottom" secondItem="GAM-Mo-wob" secondAttribute="bottom" constant="8" id="My7-Pi-mNM"/>
+                            <constraint firstAttribute="trailing" secondItem="GAM-Mo-wob" secondAttribute="trailing" id="YC2-Xv-Wzg"/>
+                            <constraint firstAttribute="height" constant="300" id="gRW-2X-TpU"/>
+                            <constraint firstAttribute="width" constant="180" id="oIR-Gm-2n0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="1xq-yo-smv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EEr-ji-B5U"/>
+                <constraint firstAttribute="trailing" secondItem="1xq-yo-smv" secondAttribute="trailing" id="FjJ-al-wJk"/>
+                <constraint firstAttribute="bottom" secondItem="1xq-yo-smv" secondAttribute="bottom" id="LIM-qm-jUK"/>
+                <constraint firstItem="1xq-yo-smv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ojn-33-TRm"/>
+            </constraints>
+            <size key="customSize" width="180" height="300"/>
+            <connections>
+                <outlet property="dishImageView" destination="jZI-aX-tht" id="1PP-vW-o4a"/>
+                <outlet property="dishTitle" destination="ZHw-g8-Kiz" id="KhH-Vd-edI"/>
+            </connections>
+            <point key="canvasLocation" x="229.00763358778624" y="76.760563380281695"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

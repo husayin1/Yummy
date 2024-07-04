@@ -14,3 +14,16 @@ struct DishCategoryRoot: Codable {
 struct DishCategory:Codable{
     let idCategory, strCategory, strCategoryThumb, strCategoryDescription: String
 }
+
+struct FilteredDishesRoot: Codable {
+    let meals: [FilteredDishes]
+}
+
+struct FilteredDishes: Codable {
+    let strMeal, strMealThumb, idMeal: String
+}
+/*
+ var formattedCalories: String{
+ return String(foramt:"%.2f", calories ?? 0)
+ }
+ */

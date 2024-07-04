@@ -24,7 +24,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.categoryLabel.text = category.strCategory
         categoryImageView.kf.setImage(with: category.strCategoryThumb.asUrl)
         
-//        categoryImageView.sd_setImage(with: URL(string: category.strCategoryThumb ?? ""),placeholderImage: UIImage(named: "appIcon"))
+    }
+    
+    func changeColor(to color: UIColor) {
+//        self.contentView.backgroundColor = color // Change to desired color
+        self.categoryLabel.textColor = color // Change to desired color
+        self.contentView.cornerRadius = 10
     }
 
 }

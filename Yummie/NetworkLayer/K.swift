@@ -13,11 +13,14 @@ struct K {
 
 enum TheMealDb {
     case categories
+    case filter
 
     var endpoint: String {
         switch self {
         case .categories:
             return "categories"
+        case .filter:
+            return "filter"
         }
     }
 }
