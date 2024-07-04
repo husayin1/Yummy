@@ -15,22 +15,38 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var chefSpecialsCollectionView: UICollectionView!
     
-    var categories: [DishCategory] = []
-    
-    var populars: [FilteredDishes] = []
-    
-    var homeViewModel: HomeViewModel!
-    
-    var selectedCategoryIndex:IndexPath? = IndexPath(item: 0, section: 0)
+    @IBOutlet weak var popularDishesLabel: UILabel!
     
     var networkIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+
+    var selectedCategoryIndex:IndexPath?
     
+    var homeViewModel: HomeViewModel!
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         setupIndicator()
         registerNibs()
         homeViewModel = HomeViewModel()
         
+        selectedCategoryIndex =  IndexPath(item: 0, section: 0)
+        popularDishesLabel.text = "Popular \(homeViewModel.categories?[selectedCategoryIndex?.row ?? 0].strCategory ?? "Beef") Dishes"
+        
+        viewModelBindMethods()
+        viewModelCalls()
+    }
+        
+}
+extension HomeViewController: HomeViewModelDuties{
+    
+    func viewModelCalls(){
+        networkIndicator.startAnimating()
+        homeViewModel.fetchAllFoodCategories()
+        homeViewModel.fetchAllFilteredDishes()
+        homeViewModel.fetchSpecialMeals()
+    }
+    
+    func viewModelBindMethods(){
         homeViewModel.bindCategoriesToHomeView = {[weak self] () in
             self?.renderCategoriesToCollectionView()
             self?.renderFilteredMealsToCollectionView()
@@ -39,52 +55,62 @@ class HomeViewController: UIViewController {
             [weak self] () in
             self?.renderFilteredMealsToCollectionView()
         }
-        
-        homeViewModel.fetchAllFoodCategories()
-        homeViewModel.fetchAllFilteredDishes()
+        homeViewModel.bindSpecialMealsToHomeView = {
+            [weak self] () in
+            self?.renderSpecialMealsToCollectionView()
+        }
+    }
+}
+
+extension HomeViewController: HomeViewNetworkDuties{
+    
+    func renderSpecialMealsToCollectionView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.chefSpecialsCollectionView.reloadData()
+            self?.networkIndicator.stopAnimating()
+        }
     }
     
+    func renderCategoriesToCollectionView(){
+        DispatchQueue.main.async { [weak self] in
+            self?.foodCategoryCollectionView.reloadData()
+            self?.networkIndicator.stopAnimating()
+        }
+    }
+    func renderFilteredMealsToCollectionView(){
+        DispatchQueue.main.async { [weak self] in
+            self?.popularDishesCollectionView.reloadData()
+            self?.networkIndicator.stopAnimating()
+        }
+    }
     
 }
 
-extension HomeViewController {
-    
-    private func registerNibs(){
+extension HomeViewController: HomeViewNormalDuties{
+ 
+    func registerNibs(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         popularDishesCollectionView.register(UINib(nibName: DishesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishesCollectionViewCell.identifier)
-        
+        chefSpecialsCollectionView.register(UINib(nibName: ChefSpecialCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ChefSpecialCollectionViewCell.identifier)
     }
     
-    private func renderCategoriesToCollectionView(){
-        DispatchQueue.main.async {
-            self.categories = self.homeViewModel.categories ?? [DishCategory]()
-            self.foodCategoryCollectionView.reloadData()
-            self.networkIndicator.stopAnimating()
-        }
-    }
-    private func renderFilteredMealsToCollectionView(){
-        DispatchQueue.main.async {
-            self.populars = self.homeViewModel.filteredDishes ?? [FilteredDishes]()
-            self.popularDishesCollectionView.reloadData()
-            self.networkIndicator.stopAnimating()
-        }
-    }
-    
-    private func setupIndicator(){
+    func setupIndicator(){
         networkIndicator.startAnimating()
         view.addSubview(networkIndicator)
     }
     
 }
 
-
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case foodCategoryCollectionView:
-            return categories.count
+            return homeViewModel.categories?.count ?? 0
         case popularDishesCollectionView:
-            return populars.count
+            return homeViewModel.filteredDishes?.count ?? 0
+        case chefSpecialsCollectionView:
+            return homeViewModel.specials?.count ?? 0
         default:
             return 0
         }
@@ -96,6 +122,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case foodCategoryCollectionView:
             
             let cell = foodCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
+            guard let categories = homeViewModel.categories else { break }
             cell.setupCategoryCell(category: categories[indexPath.row])
             
             if indexPath == selectedCategoryIndex {
@@ -108,22 +135,30 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
         case popularDishesCollectionView:
             let cell = popularDishesCollectionView.dequeueReusableCell(withReuseIdentifier: DishesCollectionViewCell.identifier, for: indexPath) as! DishesCollectionViewCell
-            
+            guard let populars = homeViewModel.filteredDishes else { break }
             cell.setupDishCollectionCell(dish: populars[indexPath.row])
+            return cell
+        case chefSpecialsCollectionView:
+            let cell = chefSpecialsCollectionView.dequeueReusableCell(withReuseIdentifier: ChefSpecialCollectionViewCell.identifier, for: indexPath) as! ChefSpecialCollectionViewCell
+            guard let special = homeViewModel.specials else { break }
+            cell.setupChefSpecialCollectionViewCell(special: special[indexPath.row])
             return cell
             
         default:
             return UICollectionViewCell()
             
         }
-        
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case foodCategoryCollectionView:
+            guard let categories = homeViewModel.categories else { break }
+            networkIndicator.startAnimating()
             homeViewModel.fetchAllFilteredDishes(category: categories[indexPath.row].strCategory)
-            print(categories[indexPath.row])
+            popularDishesLabel.text = "Popular \(categories[indexPath.row].strCategory) Dishes"
+
         default: break
             
         }
@@ -141,4 +176,20 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout{
     
+}
+
+protocol HomeViewNetworkDuties {
+    func renderCategoriesToCollectionView()
+    func renderFilteredMealsToCollectionView()
+    func renderSpecialMealsToCollectionView()
+}
+
+protocol HomeViewNormalDuties{
+    func registerNibs()
+    func setupIndicator()
+}
+
+protocol HomeViewModelDuties {
+    func viewModelCalls()
+    func viewModelBindMethods()
 }

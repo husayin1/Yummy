@@ -14,6 +14,7 @@ struct K {
 enum TheMealDb {
     case categories
     case filter
+    case random
 
     var endpoint: String {
         switch self {
@@ -21,6 +22,8 @@ enum TheMealDb {
             return "categories"
         case .filter:
             return "filter"
+        case .random:
+            return "random"
         }
     }
 }

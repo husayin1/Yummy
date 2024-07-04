@@ -13,25 +13,26 @@ import Alamofire
 enum APIRoute: URLRequestConvertible {
     
     case getCategories
+    case getRandomMeal
     case getFiltered(category: String)
     
     var method: HTTPMethod {
         switch self {
-        case .getCategories, .getFiltered:
+        case .getCategories, .getFiltered, .getRandomMeal:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .getCategories, .getFiltered:
+        case .getCategories, .getFiltered, .getRandomMeal:
             return URLEncoding.default
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getCategories:
+        case .getCategories, .getRandomMeal:
             return nil
         case .getFiltered(let category):
             return ["c": category]  // Provide the query parameter here
@@ -44,12 +45,14 @@ enum APIRoute: URLRequestConvertible {
             return TheMealDb.categories.endpoint
         case .getFiltered:
             return TheMealDb.filter.endpoint
+        case .getRandomMeal:
+            return TheMealDb.random.endpoint
         }
     }
     
     var authorizationHeader: HTTPHeaderField? {
         switch self {
-        case .getCategories, .getFiltered:
+        case .getCategories, .getFiltered, .getRandomMeal:
             return .basicAuthorization
         }
     }

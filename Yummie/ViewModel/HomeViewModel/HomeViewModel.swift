@@ -19,9 +19,15 @@ class HomeViewModel {
             bindFilteredMealsToHomeView()
         }
     }
+    var specials:[SpecialMeal]?{
+        didSet{
+            bindSpecialMealsToHomeView()
+        }
+    }
     
     var bindCategoriesToHomeView : (()->())={}
     var bindFilteredMealsToHomeView : (()->())={}
+    var bindSpecialMealsToHomeView : (()->())={}
     
     func fetchAllFoodCategories(){
         APIClient.getAllCategories { [weak self] result in
@@ -40,9 +46,19 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                 self?.filteredDishes = response.meals
-                print("Filtered Dishes is \(response.meals.count)")
             case .failure(let err):
                 print("Error Fetching Filtered Meals: ",err.localizedDescription)
+            }
+        }
+    }
+    
+    func fetchSpecialMeals(){
+        APIClient.getSpecialDishes { [weak self] result in
+            switch result {
+            case .success(let meal):
+                self?.specials = meal.meals
+            case .failure(let err):
+                print("Error Fetching Special Meals: ",err.localizedDescription)
             }
         }
     }
