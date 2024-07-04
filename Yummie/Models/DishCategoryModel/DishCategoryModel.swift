@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct DishCategoryRoot {
-    let categories: DishCategory
+struct DishCategoryRoot: Codable {
+    let categories: [DishCategory]
 }
 
-struct DishCategory{
+struct DishCategory:Codable{
     let idCategory, strCategory, strCategoryThumb, strCategoryDescription: String
 }

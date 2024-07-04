@@ -8,4 +8,6 @@ target 'Yummie' do
   # Pods for Yummie
   pod 'Kingfisher'
   pod 'Alamofire'
+  pod 'ReachabilitySwift'
+
 end

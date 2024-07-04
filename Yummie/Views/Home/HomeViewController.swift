@@ -15,35 +15,51 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var chefSpecialsCollectionView: UICollectionView!
     
-    var categories: [DishCategory] = [
-        .init(idCategory: "1", strCategory: "Beef", strCategoryThumb: "https://picsum.photos/100/200", strCategoryDescription: "Beef"),
-        .init(idCategory: "2", strCategory: "Beef", strCategoryThumb: "https://picsum.photos/100/200", strCategoryDescription: "Chicked"),
-        .init(idCategory: "3", strCategory: "Beef", strCategoryThumb: "https://picsum.photos/100/200", strCategoryDescription: "Ice Cream"),
-        .init(idCategory: "4", strCategory: "Macrona", strCategoryThumb: "https://picsum.photos/100/200", strCategoryDescription: "Beef"),
-        .init(idCategory: "5", strCategory: "Milk", strCategoryThumb: "https://picsum.photos/100/200", strCategoryDescription: "Beef"),
-    ]
+    var categories: [DishCategory] = []
+    
+    var homeViewModel: HomeViewModel!
+    
+    var networkIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupIndicator()
         registerNibs()
-        // Do any additional setup after loading the view.
+        homeViewModel = HomeViewModel()
+        
+        homeViewModel.bindCategoriesToHomeView = {[weak self] () in
+            self?.renderCategoriesToCollectionView()
+        }
+        homeViewModel.fetchAllFoodCategories()
     }
     
+    
+}
+
+extension HomeViewController {
     
     private func registerNibs(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         
     }
     
-
+    private func renderCategoriesToCollectionView(){
+        DispatchQueue.main.async {
+            self.categories = self.homeViewModel.categories ?? [DishCategory]()
+            self.foodCategoryCollectionView.reloadData()
+            self.networkIndicator.stopAnimating()
+        }
+    }
     
-
+    private func setupIndicator(){
+        networkIndicator.startAnimating()
+        view.addSubview(networkIndicator)
+    }
+    
 }
 
-extension HomeViewController: UICollectionViewDelegate {
-    
-}
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -54,8 +70,6 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout{
