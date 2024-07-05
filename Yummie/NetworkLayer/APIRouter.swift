@@ -15,17 +15,18 @@ enum APIRoute: URLRequestConvertible {
     case getCategories
     case getRandomMeal
     case getFiltered(category: String)
+    case getMealById(mealId: String)
     
     var method: HTTPMethod {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal:
+        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal:
+        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
             return URLEncoding.default
         }
     }
@@ -36,6 +37,8 @@ enum APIRoute: URLRequestConvertible {
             return nil
         case .getFiltered(let category):
             return ["c": category]  // Provide the query parameter here
+        case .getMealById(let id):
+            return ["i": id]
         }
     }
     
@@ -47,12 +50,14 @@ enum APIRoute: URLRequestConvertible {
             return TheMealDb.filter.endpoint
         case .getRandomMeal:
             return TheMealDb.random.endpoint
+        case .getMealById:
+            return TheMealDb.mealById.endpoint
         }
     }
     
     var authorizationHeader: HTTPHeaderField? {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal:
+        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
             return .basicAuthorization
         }
     }

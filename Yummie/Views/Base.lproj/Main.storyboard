@@ -336,6 +336,113 @@
             </objects>
             <point key="canvasLocation" x="1776.3358778625955" y="-27.464788732394368"/>
         </scene>
+        <!--Meal Detail View Controller-->
+        <scene sceneID="2Ml-va-4jx">
+            <objects>
+                <viewController storyboardIdentifier="MealDetailViewController" id="ZaK-ce-pMa" customClass="MealDetailViewController" customModule="Yummie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHV-3w-QdT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePa-Wk-wNj">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdG-a3-sLP">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="516.66666666666663"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="APV-qI-eyJ">
+                                        <rect key="frame" x="16" y="532.66666666666663" width="361" height="269.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyF-QF-imb">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkM-51-Ov6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="261" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-Hc-GmR">
+                                                        <rect key="frame" x="261" y="0.0" width="100" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="xKA-kB-plK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.73865920309999999" green="0.19867694380000001" blue="0.096354193990000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-d3-1Q5">
+                                                <rect key="frame" x="0.0" y="40" width="361" height="21.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUX-O0-TjJ">
+                                                <rect key="frame" x="0.0" y="77.666666666666728" width="361" height="191.66666666666663"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Soak herring in cold water for at least 1 hour. If very salty, repeat, changing the water each time.\r\n\r\nDrain thoroughly and slice herring into bite-size pieces.\r\n\r\nPlace in a jar large enough to accommodate the pieces and cover with oil, allspice, peppercorns, and bay leaf. Close the jar.\r\n\r\nRefrigerate for 2 to 3 days before eating. This will keep refrigerated up to 2 weeks.\r\n\r\nServe with finely chopped onion or onion slices, lemon, and parsley or dill.</string>
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="16" name=".SFNS-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="APV-qI-eyJ" firstAttribute="top" secondItem="jdG-a3-sLP" secondAttribute="bottom" constant="16" id="2Z7-Ms-7AT"/>
+                                    <constraint firstItem="APV-qI-eyJ" firstAttribute="leading" secondItem="OuU-1C-5MT" secondAttribute="leading" constant="16" id="4eg-ab-cVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="APV-qI-eyJ" secondAttribute="trailing" constant="16" id="5pM-Ww-QYs"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="leading" secondItem="OuU-1C-5MT" secondAttribute="leading" id="6fh-h9-n0S"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="leading" secondItem="ePa-Wk-wNj" secondAttribute="leading" id="ABe-mS-QHQ"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="top" secondItem="ePa-Wk-wNj" secondAttribute="top" id="G1Q-6R-SDZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="jdG-a3-sLP" secondAttribute="trailing" id="JSw-HD-vou"/>
+                                    <constraint firstItem="APV-qI-eyJ" firstAttribute="leading" secondItem="ePa-Wk-wNj" secondAttribute="leading" constant="16" id="Jlj-45-aer"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="top" secondItem="OuU-1C-5MT" secondAttribute="top" id="Kan-2b-Ivg"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="trailing" secondItem="OuU-1C-5MT" secondAttribute="trailing" id="Lix-EW-opp"/>
+                                    <constraint firstAttribute="bottom" secondItem="APV-qI-eyJ" secondAttribute="bottom" constant="16" id="Mio-rO-n1e"/>
+                                    <constraint firstItem="APV-qI-eyJ" firstAttribute="leading" secondItem="ePa-Wk-wNj" secondAttribute="leading" constant="16" id="R0H-mc-5ii"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="top" secondItem="OuU-1C-5MT" secondAttribute="top" id="WNH-3v-6e8"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="top" secondItem="ePa-Wk-wNj" secondAttribute="top" id="YDZ-yH-PVh"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="leading" secondItem="ePa-Wk-wNj" secondAttribute="leading" id="bC7-8t-8Dm"/>
+                                    <constraint firstItem="OuU-1C-5MT" firstAttribute="trailing" secondItem="APV-qI-eyJ" secondAttribute="trailing" constant="16" id="fw9-BR-1OF"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="trailing" secondItem="OuU-1C-5MT" secondAttribute="trailing" id="nNz-0d-iBm"/>
+                                    <constraint firstItem="jdG-a3-sLP" firstAttribute="leading" secondItem="OuU-1C-5MT" secondAttribute="leading" id="tcB-h5-ZXJ"/>
+                                    <constraint firstItem="OuU-1C-5MT" firstAttribute="bottom" secondItem="APV-qI-eyJ" secondAttribute="bottom" constant="16" id="v1y-UM-Gkf"/>
+                                    <constraint firstAttribute="trailing" secondItem="jdG-a3-sLP" secondAttribute="trailing" id="voJ-cv-iiN"/>
+                                    <constraint firstAttribute="trailing" secondItem="APV-qI-eyJ" secondAttribute="trailing" constant="16" id="ymS-dT-QlF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="WjU-6Q-wAw"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="OuU-1C-5MT"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q0O-ja-ve3"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.95924700809999996" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q0O-ja-ve3" firstAttribute="trailing" secondItem="ePa-Wk-wNj" secondAttribute="trailing" id="Ayg-Zp-K0n"/>
+                            <constraint firstItem="ePa-Wk-wNj" firstAttribute="leading" secondItem="q0O-ja-ve3" secondAttribute="leading" id="CGR-zt-cXU"/>
+                            <constraint firstItem="q0O-ja-ve3" firstAttribute="bottom" secondItem="ePa-Wk-wNj" secondAttribute="bottom" id="W4o-zx-QDc"/>
+                            <constraint firstItem="ePa-Wk-wNj" firstAttribute="top" secondItem="iHV-3w-QdT" secondAttribute="top" id="WVd-j0-0rW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mealCountryLabel" destination="V5w-Hc-GmR" id="9mA-B3-wH6"/>
+                        <outlet property="mealImageView" destination="jdG-a3-sLP" id="RfL-JQ-6Mo"/>
+                        <outlet property="mealInstructionsLabel" destination="lUX-O0-TjJ" id="axL-Oh-INf"/>
+                        <outlet property="mealTitleLabel" destination="GkM-51-Ov6" id="dfh-6c-c4b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wlp-cA-27M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649.6183206106871" y="-27.464788732394368"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="imQ-hU-Uyi">
             <objects>

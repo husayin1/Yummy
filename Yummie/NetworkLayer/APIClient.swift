@@ -56,6 +56,9 @@ class APIClient {
     static func getSpecialDishes(completion: @escaping (Result<MealsRoot, NetworkError>) -> Void) {
         performRequest(route: APIRoute.getRandomMeal, completion: completion)
     }
+    static func getMealById(id: String,completion: @escaping (Result<MealsRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getMealById(mealId: id), completion: completion)
+    }
     
 }
 

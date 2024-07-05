@@ -41,6 +41,7 @@ extension HomeViewController: HomeViewModelDuties{
     
     func viewModelCalls(){
         networkIndicator.startAnimating()
+        view.addSubview(networkIndicator)
         homeViewModel.fetchAllFoodCategories()
         homeViewModel.fetchAllFilteredDishes()
         homeViewModel.fetchSpecialMeals()
@@ -158,7 +159,21 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             networkIndicator.startAnimating()
             homeViewModel.fetchAllFilteredDishes(category: categories[indexPath.row].strCategory)
             popularDishesLabel.text = "Popular \(categories[indexPath.row].strCategory) Dishes"
-
+        case chefSpecialsCollectionView:
+            guard let meal = homeViewModel.specials else { break }
+            let controller = MealDetailViewController.instantiate()
+            controller.mealId = meal[indexPath.row].idMeal
+            
+            navigationController?.pushViewController(controller, animated: true)
+            print(meal[indexPath.row].idMeal)
+        case popularDishesCollectionView:
+            guard let populars = homeViewModel.filteredDishes else { break }
+            
+            let controller = MealDetailViewController.instantiate()
+            controller.mealId = populars[indexPath.row].idMeal
+            
+            navigationController?.pushViewController(controller, animated: true)
+            print( populars[indexPath.row].idMeal)
         default: break
             
         }
