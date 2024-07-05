@@ -345,13 +345,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePa-Wk-wNj">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdG-a3-sLP">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="516.66666666666663"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdG-a3-sLP">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="LoP-PH-oIe"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="APV-qI-eyJ">
-                                        <rect key="frame" x="16" y="532.66666666666663" width="361" height="269.33333333333337"/>
+                                        <rect key="frame" x="16" y="516" width="361" height="320"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyF-QF-imb">
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
@@ -373,20 +376,20 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-d3-1Q5">
-                                                <rect key="frame" x="0.0" y="40" width="361" height="21.666666666666671"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-d3-1Q5">
+                                                <rect key="frame" x="0.0" y="40" width="361" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUX-O0-TjJ">
-                                                <rect key="frame" x="0.0" y="77.666666666666728" width="361" height="191.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="93" width="361" height="227"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Soak herring in cold water for at least 1 hour. If very salty, repeat, changing the water each time.\r\n\r\nDrain thoroughly and slice herring into bite-size pieces.\r\n\r\nPlace in a jar large enough to accommodate the pieces and cover with oil, allspice, peppercorns, and bay leaf. Close the jar.\r\n\r\nRefrigerate for 2 to 3 days before eating. This will keep refrigerated up to 2 weeks.\r\n\r\nServe with finely chopped onion or onion slices, lemon, and parsley or dill.</string>
                                                         <attributes>
                                                             <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="16" name=".SFNS-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -428,8 +431,8 @@
                         <constraints>
                             <constraint firstItem="q0O-ja-ve3" firstAttribute="trailing" secondItem="ePa-Wk-wNj" secondAttribute="trailing" id="Ayg-Zp-K0n"/>
                             <constraint firstItem="ePa-Wk-wNj" firstAttribute="leading" secondItem="q0O-ja-ve3" secondAttribute="leading" id="CGR-zt-cXU"/>
-                            <constraint firstItem="q0O-ja-ve3" firstAttribute="bottom" secondItem="ePa-Wk-wNj" secondAttribute="bottom" id="W4o-zx-QDc"/>
                             <constraint firstItem="ePa-Wk-wNj" firstAttribute="top" secondItem="iHV-3w-QdT" secondAttribute="top" id="WVd-j0-0rW"/>
+                            <constraint firstAttribute="bottom" secondItem="ePa-Wk-wNj" secondAttribute="bottom" id="fCc-5q-fMb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -442,6 +445,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlp-cA-27M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2649.6183206106871" y="-27.464788732394368"/>
+        </scene>
+        <!--List Dishes View Controller-->
+        <scene sceneID="zy8-xL-4nC">
+            <objects>
+                <viewController storyboardIdentifier="ListDishesViewController" id="pdz-vV-xge" customClass="ListDishesViewController" customModule="Yummie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Kd-5d-8rF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aHv-nA-pMt">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pdz-vV-xge" id="hwz-ju-5tW"/>
+                                    <outlet property="delegate" destination="pdz-vV-xge" id="wgo-dw-mNG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8kM-tX-APz"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.95924700809999996" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aHv-nA-pMt" firstAttribute="leading" secondItem="8kM-tX-APz" secondAttribute="leading" id="TTv-3I-3dr"/>
+                            <constraint firstItem="aHv-nA-pMt" firstAttribute="trailing" secondItem="8kM-tX-APz" secondAttribute="trailing" id="YAY-SI-B8x"/>
+                            <constraint firstItem="aHv-nA-pMt" firstAttribute="top" secondItem="9Kd-5d-8rF" secondAttribute="top" id="nXM-rP-5eE"/>
+                            <constraint firstAttribute="bottom" secondItem="aHv-nA-pMt" secondAttribute="bottom" id="v0p-eC-fzS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dishesTableView" destination="aHv-nA-pMt" id="eU0-07-dbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MNW-Nf-eDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3428.2442748091603" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="imQ-hU-Uyi">
