@@ -26,10 +26,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func changeColor(to color: UIColor) {
-//        self.contentView.backgroundColor = color // Change to desired color
-        self.categoryLabel.textColor = color // Change to desired color
-        self.contentView.cornerRadius = 10
-    }
-
 }

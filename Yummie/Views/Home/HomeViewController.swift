@@ -18,11 +18,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var popularDishesLabel: UILabel!
     
     var networkIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
-
+    
     var selectedCategoryIndex:IndexPath?
     
     var homeViewModel: HomeViewModel!
-            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupIndicator()
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         viewModelBindMethods()
         viewModelCalls()
     }
-        
+    
 }
 extension HomeViewController: HomeViewModelDuties{
     
@@ -88,7 +88,7 @@ extension HomeViewController: HomeViewNetworkDuties{
 }
 
 extension HomeViewController: HomeViewNormalDuties{
- 
+    
     func registerNibs(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         popularDishesCollectionView.register(UINib(nibName: DishesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishesCollectionViewCell.identifier)
@@ -126,11 +126,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             guard let categories = homeViewModel.categories else { break }
             cell.setupCategoryCell(category: categories[indexPath.row])
             
-            if indexPath == selectedCategoryIndex {
-                cell.changeColor(to: .red) // Selected color
-            } else {
-                cell.changeColor(to: .black) // Default color
-            }
             
             return cell
             
@@ -177,15 +172,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         default: break
             
         }
-        if let previousIndex = selectedCategoryIndex {
-                    let previousCell = foodCategoryCollectionView.cellForItem(at: previousIndex) as? CategoryCollectionViewCell
-                    previousCell?.changeColor(to: .black) // Revert previous cell to default color
-                }
-                
-                let selectedCell = foodCategoryCollectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
-                selectedCell?.changeColor(to: .red) // Change the color of the selected cell
-                
-                selectedCategoryIndex = indexPath
+        selectedCategoryIndex = indexPath
     }
 }
 

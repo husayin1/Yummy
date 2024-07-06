@@ -28,7 +28,7 @@ class ListDishesViewController: UIViewController {
 extension ListDishesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = MealDetailViewController.instantiate()
-        controller.mealId = 5575
+        controller.mealId = "5575"
         navigationController?.pushViewController(controller, animated: true)
     }
     
