@@ -16,32 +16,29 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var chefSpecialsCollectionView: UICollectionView!
     
     @IBOutlet weak var popularDishesLabel: UILabel!
-    
-    var networkIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
-    
+        
     var selectedCategoryIndex:IndexPath?
     
     var homeViewModel: HomeViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupIndicator()
         registerNibs()
         homeViewModel = HomeViewModel()
         
-        selectedCategoryIndex =  IndexPath(item: 0, section: 0)
-        popularDishesLabel.text = "Popular \(homeViewModel.categories?[selectedCategoryIndex?.row ?? 0].strCategory ?? "Beef") Dishes"
         
         viewModelBindMethods()
         viewModelCalls()
+        
+        
+        selectedCategoryIndex =  IndexPath(item: 0, section: 0)
+        popularDishesLabel.text = "Popular \(homeViewModel.categories?[selectedCategoryIndex?.row ?? 0].strCategory ?? "Beef") Dishes"
     }
     
 }
 extension HomeViewController: HomeViewModelDuties{
     
     func viewModelCalls(){
-        networkIndicator.startAnimating()
-        view.addSubview(networkIndicator)
         homeViewModel.fetchAllFoodCategories()
         homeViewModel.fetchAllFilteredDishes()
         homeViewModel.fetchSpecialMeals()
@@ -68,20 +65,17 @@ extension HomeViewController: HomeViewNetworkDuties{
     func renderSpecialMealsToCollectionView() {
         DispatchQueue.main.async { [weak self] in
             self?.chefSpecialsCollectionView.reloadData()
-            self?.networkIndicator.stopAnimating()
         }
     }
     
     func renderCategoriesToCollectionView(){
         DispatchQueue.main.async { [weak self] in
             self?.foodCategoryCollectionView.reloadData()
-            self?.networkIndicator.stopAnimating()
         }
     }
     func renderFilteredMealsToCollectionView(){
         DispatchQueue.main.async { [weak self] in
             self?.popularDishesCollectionView.reloadData()
-            self?.networkIndicator.stopAnimating()
         }
     }
     
@@ -95,10 +89,6 @@ extension HomeViewController: HomeViewNormalDuties{
         chefSpecialsCollectionView.register(UINib(nibName: ChefSpecialCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ChefSpecialCollectionViewCell.identifier)
     }
     
-    func setupIndicator(){
-        networkIndicator.startAnimating()
-        view.addSubview(networkIndicator)
-    }
     
 }
 
@@ -151,7 +141,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView {
         case foodCategoryCollectionView:
             guard let categories = homeViewModel.categories else { break }
-            networkIndicator.startAnimating()
             homeViewModel.fetchAllFilteredDishes(category: categories[indexPath.row].strCategory)
             popularDishesLabel.text = "Popular \(categories[indexPath.row].strCategory) Dishes"
         case chefSpecialsCollectionView:
@@ -188,7 +177,6 @@ protocol HomeViewNetworkDuties {
 
 protocol HomeViewNormalDuties{
     func registerNibs()
-    func setupIndicator()
 }
 
 protocol HomeViewModelDuties {

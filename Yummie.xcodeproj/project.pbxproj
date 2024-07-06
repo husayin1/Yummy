@@ -31,6 +31,8 @@
 		569C93532C38AD9E008F7BB8 /* FavoriteDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C93522C38AD9E008F7BB8 /* FavoriteDishesViewController.swift */; };
 		569C93572C38C7BB008F7BB8 /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C93552C38C7BB008F7BB8 /* IngredientCollectionViewCell.swift */; };
 		569C93582C38C7BB008F7BB8 /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569C93562C38C7BB008F7BB8 /* IngredientCollectionViewCell.xib */; };
+		56A47B662C39949E00ECD04B /* FilterDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A47B652C39949E00ECD04B /* FilterDishesViewController.swift */; };
+		56A47B692C3996CE00ECD04B /* FilterDishesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A47B682C3996CE00ECD04B /* FilterDishesViewModel.swift */; };
 		56AA4A482C35907200F2A0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A472C35907200F2A0B0 /* AppDelegate.swift */; };
 		56AA4A4A2C35907200F2A0B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A492C35907200F2A0B0 /* SceneDelegate.swift */; };
 		56AA4A4F2C35907200F2A0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA4A4D2C35907200F2A0B0 /* Main.storyboard */; };
@@ -42,6 +44,7 @@
 		56AA4A692C35A1DF00F2A0B0 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A682C35A1DF00F2A0B0 /* OnboardingSlide.swift */; };
 		56AA4A6B2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A6A2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift */; };
 		56AA4A6E2C35B87E00F2A0B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA4A6D2C35B87E00F2A0B0 /* HomeViewController.swift */; };
+		56B5C6872C39B78700D11249 /* ListDishesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C6862C39B78700D11249 /* ListDishesViewModel.swift */; };
 		EAB812C859296AFA306BC1C3 /* Pods_Yummie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D28CA06AD073125B2277B8 /* Pods_Yummie.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,8 @@
 		569C93522C38AD9E008F7BB8 /* FavoriteDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDishesViewController.swift; sourceTree = "<group>"; };
 		569C93552C38C7BB008F7BB8 /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
 		569C93562C38C7BB008F7BB8 /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
+		56A47B652C39949E00ECD04B /* FilterDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDishesViewController.swift; sourceTree = "<group>"; };
+		56A47B682C3996CE00ECD04B /* FilterDishesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDishesViewModel.swift; sourceTree = "<group>"; };
 		56AA4A442C35907200F2A0B0 /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AA4A472C35907200F2A0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56AA4A492C35907200F2A0B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 		56AA4A682C35A1DF00F2A0B0 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		56AA4A6A2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AA4A6D2C35B87E00F2A0B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		56B5C6862C39B78700D11249 /* ListDishesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewModel.swift; sourceTree = "<group>"; };
 		C5D28CA06AD073125B2277B8 /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF87ECB783CC4C89298360C /* Pods-Yummie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.release.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.release.xcconfig"; sourceTree = "<group>"; };
 		EF6E99E1397E4B885EF6DD93 /* Pods-Yummie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.debug.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 		564880632C3620D7002CBEDF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				56B5C6852C39B77700D11249 /* ListDishesViewModel */,
+				56A47B672C3996BF00ECD04B /* FilterViewModel */,
 				565757C02C3769CD00463FCB /* MealDetailViewModel */,
 				564880642C3620E8002CBEDF /* HomeViewModel */,
 			);
@@ -242,6 +250,22 @@
 			path = IngredientsCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		56A47B642C39947D00ECD04B /* FilterDishes */ = {
+			isa = PBXGroup;
+			children = (
+				56A47B652C39949E00ECD04B /* FilterDishesViewController.swift */,
+			);
+			path = FilterDishes;
+			sourceTree = "<group>";
+		};
+		56A47B672C3996BF00ECD04B /* FilterViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56A47B682C3996CE00ECD04B /* FilterDishesViewModel.swift */,
+			);
+			path = FilterViewModel;
+			sourceTree = "<group>";
+		};
 		56AA4A3B2C35907100F2A0B0 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +311,7 @@
 		56AA4A5F2C359B5C00F2A0B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56A47B642C39947D00ECD04B /* FilterDishes */,
 				569C93512C38AD7A008F7BB8 /* FavoriteDishes */,
 				5675AB4D2C383AED004BEF2C /* ListDishes */,
 				565757BB2C3764CB00463FCB /* MealDetail */,
@@ -343,6 +368,14 @@
 				56AA4A6D2C35B87E00F2A0B0 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		56B5C6852C39B77700D11249 /* ListDishesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56B5C6862C39B78700D11249 /* ListDishesViewModel.swift */,
+			);
+			path = ListDishesViewModel;
 			sourceTree = "<group>";
 		};
 		705C77DDB52D09B89A45823C /* Pods */ = {
@@ -494,6 +527,7 @@
 				56AA4A482C35907200F2A0B0 /* AppDelegate.swift in Sources */,
 				565757C22C3769D900463FCB /* MealDetailViewModel.swift in Sources */,
 				561E6C6F2C3706A8000C2367 /* DishesCollectionViewCell.swift in Sources */,
+				56A47B662C39949E00ECD04B /* FilterDishesViewController.swift in Sources */,
 				56AA4A6E2C35B87E00F2A0B0 /* HomeViewController.swift in Sources */,
 				565757BF2C3766A400463FCB /* UIViewController+Extension.swift in Sources */,
 				5648804D2C360969002CBEDF /* CategoryCollectionViewCell.swift in Sources */,
@@ -503,10 +537,12 @@
 				56AA4A662C359EB400F2A0B0 /* UIView+Extension.swift in Sources */,
 				56AA4A692C35A1DF00F2A0B0 /* OnboardingSlide.swift in Sources */,
 				56AA4A6B2C35A49F00F2A0B0 /* OnboardingCollectionViewCell.swift in Sources */,
+				56B5C6872C39B78700D11249 /* ListDishesViewModel.swift in Sources */,
 				569C93532C38AD9E008F7BB8 /* FavoriteDishesViewController.swift in Sources */,
 				5675AB4B2C3836BB004BEF2C /* MealTableViewCell.swift in Sources */,
 				564880602C361EC2002CBEDF /* K.swift in Sources */,
 				564880562C36170A002CBEDF /* CardView.swift in Sources */,
+				56A47B692C3996CE00ECD04B /* FilterDishesViewModel.swift in Sources */,
 				5675AB4F2C383B2F004BEF2C /* ListDishesViewController.swift in Sources */,
 				56AA4A4A2C35907200F2A0B0 /* SceneDelegate.swift in Sources */,
 			);

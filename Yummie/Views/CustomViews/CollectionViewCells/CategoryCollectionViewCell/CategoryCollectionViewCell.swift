@@ -23,7 +23,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     func setupCategoryCell(category: DishCategory){
         self.categoryLabel.text = category.strCategory
         categoryImageView.kf.setImage(with: category.strCategoryThumb.asUrl)
-        
+    }
+    
+    func setupAreaCell(area: Area){
+        self.categoryLabel.text = (area.strArea == "Unknown" ? "Palestine" : area.strArea)
+        let img = area.setThumbnail(for: area.strArea)
+        categoryImageView.kf.setImage(with: img.asUrl)
     }
     
 }

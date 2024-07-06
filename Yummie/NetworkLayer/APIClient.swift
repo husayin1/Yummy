@@ -15,10 +15,10 @@ class APIClient {
             return
         }
         if let requestBody = try? JSONSerialization.data(withJSONObject: route.parameters ?? [:], options: .prettyPrinted),
-              let requestBodyString = String(data: requestBody, encoding: .utf8) {
-               print("Request Body:")
-               print(requestBodyString)
-           }
+           let requestBodyString = String(data: requestBody, encoding: .utf8) {
+            print("Request Body:")
+            print(requestBodyString)
+        }
         AF.request(route).validate()
             .responseDecodable { (response: AFDataResponse<T>) in
                 switch response.result {
@@ -51,13 +51,25 @@ class APIClient {
     }
     
     static func getFilteredDishes(category: String,completion: @escaping (Result<FilteredDishesRoot, NetworkError>) -> Void) {
-        performRequest(route: APIRoute.getFiltered(category: category), completion: completion)
+        performRequest(route: APIRoute.getFilteredByCategory(category: category), completion: completion)
+    }
+    static func getFilteredAreas(area: String,completion: @escaping (Result<FilteredDishesRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getFilteredByArea(area: area), completion: completion)
+    }
+    static func getFilteredIngredient(ingredient: String,completion: @escaping (Result<FilteredDishesRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getFilteredByIngredient(ingredient: ingredient), completion: completion)
     }
     static func getSpecialDishes(completion: @escaping (Result<MealsRoot, NetworkError>) -> Void) {
         performRequest(route: APIRoute.getRandomMeal, completion: completion)
     }
     static func getMealById(id: String,completion: @escaping (Result<MealsRoot, NetworkError>) -> Void) {
         performRequest(route: APIRoute.getMealById(mealId: id), completion: completion)
+    }
+    static func getAreas(completion: @escaping (Result<AreasRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getAreas, completion: completion)
+    }
+    static func getIngredients(completion: @escaping (Result<IngredientRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getIngredietns, completion: completion)
     }
     
 }

@@ -16,6 +16,8 @@ enum TheMealDb {
     case filter
     case random
     case mealById
+    case areas
+    case ingredients
 
     var endpoint: String {
         switch self {
@@ -27,6 +29,8 @@ enum TheMealDb {
             return "random"
         case .mealById:
             return "lookup"
+        case .areas, .ingredients:
+            return "list"
         }
     }
 }

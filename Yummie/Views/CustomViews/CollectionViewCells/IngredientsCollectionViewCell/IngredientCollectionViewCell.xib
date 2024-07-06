@@ -35,6 +35,8 @@
                                             <constraint firstItem="imi-Df-O3y" firstAttribute="leading" secondItem="eTo-Hh-aiL" secondAttribute="leading" constant="4" id="1uU-Li-bNy"/>
                                             <constraint firstAttribute="bottom" secondItem="imi-Df-O3y" secondAttribute="bottom" constant="4" id="2Na-NT-gR2"/>
                                             <constraint firstAttribute="height" constant="62" id="6hb-4U-ZVP"/>
+                                            <constraint firstAttribute="width" constant="62" id="9BV-Le-RII"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="Plc-CA-RYb"/>
                                             <constraint firstAttribute="trailing" secondItem="imi-Df-O3y" secondAttribute="trailing" constant="4" id="U20-89-GyH"/>
                                             <constraint firstItem="imi-Df-O3y" firstAttribute="top" secondItem="eTo-Hh-aiL" secondAttribute="top" constant="4" id="gid-rs-4qc"/>
                                         </constraints>
@@ -44,7 +46,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-09-OQ6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-09-OQ6">
                                         <rect key="frame" x="0.0" y="62" width="62" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -73,6 +75,10 @@
                 <constraint firstItem="kGM-Qk-Oka" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zSg-8a-WAd"/>
             </constraints>
             <size key="customSize" width="62" height="83"/>
+            <connections>
+                <outlet property="ingredientTitleLabel" destination="bTu-09-OQ6" id="an0-8o-g7G"/>
+                <outlet property="ingredientsImageView" destination="imi-Df-O3y" id="980-OE-087"/>
+            </connections>
             <point key="canvasLocation" x="138.93129770992365" y="0.35211267605633806"/>
         </collectionViewCell>
     </objects>

@@ -12,8 +12,7 @@ class MealTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mealName: UILabel!
     
-    @IBOutlet weak var mealCountry: UILabel!
-    static let identifier = "MealTableViewCell"
+    static let identifier = String(describing: MealTableViewCell.self)
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,11 +24,9 @@ class MealTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupMealTableViewCell(dish: SpecialMeal){
+    func setupMealTableViewCell(dish: FilteredDishes){
         self.mealImage.kf.setImage(with: dish.strMealThumb.asUrl)
-        self.mealName.text = dish.strMeal
-        self.mealCountry.text = dish.strArea
-        
+        self.mealName.text = dish.strMeal        
     }
     
 }

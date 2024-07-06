@@ -14,19 +14,23 @@ enum APIRoute: URLRequestConvertible {
     
     case getCategories
     case getRandomMeal
-    case getFiltered(category: String)
+    case getFilteredByCategory(category: String)
+    case getFilteredByArea(area: String)
+    case getFilteredByIngredient(ingredient: String)
     case getMealById(mealId: String)
+    case getAreas
+    case getIngredietns
     
     var method: HTTPMethod {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
+        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
+        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
             return URLEncoding.default
         }
     }
@@ -35,10 +39,18 @@ enum APIRoute: URLRequestConvertible {
         switch self {
         case .getCategories, .getRandomMeal:
             return nil
-        case .getFiltered(let category):
+        case .getFilteredByCategory(let category):
             return ["c": category]  // Provide the query parameter here
         case .getMealById(let id):
             return ["i": id]
+        case .getFilteredByArea(let area):
+            return ["a":area]
+        case .getAreas:
+            return ["a":"list"]
+        case .getIngredietns:
+            return ["i":"list"]
+        case .getFilteredByIngredient(let ingredient):
+            return ["i":ingredient]
         }
     }
     
@@ -46,18 +58,20 @@ enum APIRoute: URLRequestConvertible {
         switch self {
         case .getCategories:
             return TheMealDb.categories.endpoint
-        case .getFiltered:
+        case .getFilteredByCategory, .getFilteredByArea, .getFilteredByIngredient:
             return TheMealDb.filter.endpoint
         case .getRandomMeal:
             return TheMealDb.random.endpoint
         case .getMealById:
             return TheMealDb.mealById.endpoint
+        case .getAreas, .getIngredietns:
+            return TheMealDb.areas.endpoint
         }
     }
     
     var authorizationHeader: HTTPHeaderField? {
         switch self {
-        case .getCategories, .getFiltered, .getRandomMeal, .getMealById:
+        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
             return .basicAuthorization
         }
     }
