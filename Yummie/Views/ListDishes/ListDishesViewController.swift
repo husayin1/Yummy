@@ -14,6 +14,9 @@ class ListDishesViewController: UIViewController {
     var from: FilterType!
     var stringFilterWith:String!
     var viewModel: ListDishesViewModel!
+    var searchController: UISearchController!
+    var filteredMeals: [FilteredDishes] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +27,8 @@ class ListDishesViewController: UIViewController {
             self?.renderTableViewData()
         }
         title = "\(stringFilterWith ?? "New") Dishes"
+        
+        setupSearchController()
         
         switch from {
         case .area:
@@ -42,34 +47,76 @@ class ListDishesViewController: UIViewController {
             self?.dishesTableView.reloadData()
         }
     }
+    
     private func registerCells(){
         dishesTableView.register(UINib(nibName: MealTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MealTableViewCell.identifier)
     }
     
+    private func setupSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Dishes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    private func isSearchBarEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private func isFiltering() -> Bool {
+        return searchController.isActive && !isSearchBarEmpty()
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredMeals = viewModel.meals?.filter { (meal: FilteredDishes) -> Bool in
+            return meal.strMeal.lowercased().contains(searchText.lowercased())
+        } ?? []
+        
+        dishesTableView.reloadData()
+    }
 }
-
+extension ListDishesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text ?? "")
+    }
+}
 extension ListDishesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = MealDetailViewController.instantiate()
-        controller.mealId = viewModel.meals?[indexPath.row].idMeal
+        let meal: FilteredDishes
+        if isFiltering() {
+            meal = filteredMeals[indexPath.row]
+        } else {
+            guard let meals = viewModel.meals else { return }
+            meal = meals[indexPath.row]
+        }
+        controller.mealId = meal.idMeal
         navigationController?.pushViewController(controller, animated: true)
     }
-    
 }
 
 extension ListDishesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredMeals.count
+        }
         return viewModel.meals?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = dishesTableView.dequeueReusableCell(withIdentifier: MealTableViewCell.identifier, for: indexPath) as! MealTableViewCell
-        guard let meals = viewModel.meals else { return UITableViewCell() }
-        cell.setupMealTableViewCell(dish: meals[indexPath.row])
+        let meal: FilteredDishes
+        if isFiltering() {
+            meal = filteredMeals[indexPath.row]
+        } else {
+            guard let meals = viewModel.meals else { return UITableViewCell() }
+            meal = meals[indexPath.row]
+        }
+        cell.setupMealTableViewCell(dish: meal)
         return cell
-        
     }
-    
-    
 }
