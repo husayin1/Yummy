@@ -11,4 +11,11 @@ extension String {
     var asUrl: URL? {
         return URL(string: self)
     }
+    /*
+     var formattedCalories: String{
+     return String(foramt:"%.2f", calories ?? 0)
+     }
+     */
+
 }
+

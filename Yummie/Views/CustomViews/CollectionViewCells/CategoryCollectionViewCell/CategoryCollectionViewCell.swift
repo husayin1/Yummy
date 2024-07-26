@@ -27,8 +27,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     func setupAreaCell(area: Area){
         self.categoryLabel.text = (area.strArea == "Unknown" ? "Palestine" : area.strArea)
-        let img = area.setThumbnail(for: area.strArea)
-        categoryImageView.kf.setImage(with: img.asUrl)
+//        categoryImageView.kf.setImage(with: img.asUrl)
+        self.categoryImageView.setImage(area.setThumbnail(for: area.strArea))
+        
     }
     
 }

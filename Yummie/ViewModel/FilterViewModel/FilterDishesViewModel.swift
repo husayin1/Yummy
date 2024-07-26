@@ -34,7 +34,7 @@ class FilterDishesViewModel{
         APIClient.getAreas{ [weak self] result in
             switch result {
                 case .success(let response):
-                    self?.areas = response.meals
+                    self?.areas = response.areas
                 case .failure(let err):
                     print("Error Fetching Areas: ",err.localizedDescription)
             }
@@ -44,7 +44,7 @@ class FilterDishesViewModel{
         APIClient.getIngredients { [weak self] result in
             switch result{
             case .success(let response):
-                self?.ingredients = response.meals
+                self?.ingredients = response.ingredients
             case .failure(let err):
                 print("Error Fetching Ingredients:  ",err.localizedDescription)
             }

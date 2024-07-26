@@ -56,7 +56,7 @@ class HomeViewModel {
         APIClient.getSpecialDishes { [weak self] result in
             switch result {
             case .success(let meal):
-                self?.specials = meal.meals
+                self?.specials = meal.meal
             case .failure(let err):
                 print("Error Fetching Special Meals: ",err.localizedDescription)
             }

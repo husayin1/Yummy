@@ -22,7 +22,9 @@ class IngredientCollectionViewCell: UICollectionViewCell {
         self.ingredientTitleLabel.text = ingredint.strIngredient
         let img = "https://www.themealdb.com/images/ingredients/" + ingredint.strIngredient + ".png"
         
-        self.ingredientsImageView.kf.setImage(with: formatText(img).asUrl)
+//        self.ingredientsImageView.kf.setImage(with: formatText(img).asUrl)
+        self.ingredientsImageView.setImage(formatText(img))
+
     }
     func formatText(_ strInstructions: String) -> String {
         return strInstructions.replacingOccurrences(of: " ", with: "%20")

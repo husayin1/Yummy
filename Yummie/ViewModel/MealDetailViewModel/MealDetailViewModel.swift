@@ -23,7 +23,7 @@ class MealDetailsViewModel {
         APIClient.getMealById(id: id) { [weak self] result in
             switch result {
             case .success(let meal):
-                self?.currentMeal = meal.meals.first
+                self?.currentMeal = meal.meal.first
             case .failure(let err):
                 print("Error Fetching Meal By Id \(err.localizedDescription)")
             }

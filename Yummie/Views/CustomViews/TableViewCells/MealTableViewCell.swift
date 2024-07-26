@@ -25,7 +25,8 @@ class MealTableViewCell: UITableViewCell {
     }
     
     func setupMealTableViewCell(dish: FilteredDishes){
-        self.mealImage.kf.setImage(with: dish.strMealThumb.asUrl)
+//        self.mealImage.kf.setImage(with: dish.strMealThumb.asUrl)
+        self.mealImage.setImage(dish.strMealThumb)
         self.mealName.text = dish.strMeal        
     }
     

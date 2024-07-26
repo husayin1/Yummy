@@ -40,7 +40,7 @@ enum APIRoute: URLRequestConvertible {
         case .getCategories, .getRandomMeal:
             return nil
         case .getFilteredByCategory(let category):
-            return ["c": category]  // Provide the query parameter here
+            return ["c": category]
         case .getMealById(let id):
             return ["i": id]
         case .getFilteredByArea(let area):
@@ -69,19 +69,11 @@ enum APIRoute: URLRequestConvertible {
         }
     }
     
-    var authorizationHeader: HTTPHeaderField? {
-        switch self {
-        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
-            return .basicAuthorization
-        }
-    }
-
+    
     func asURLRequest() throws -> URLRequest {
         let url = try K.baseUrl.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path + ".php"))
         urlRequest.httpMethod = method.rawValue
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        
         
         return try encoding.encode(urlRequest, with: parameters)
     }

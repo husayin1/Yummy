@@ -35,13 +35,3 @@ enum TheMealDb {
     }
 }
 
-enum HTTPHeaderField: String {
-    case contentType = "Content-Type"
-    case basicAuthorization = "Authorization"
-    case apiKeyAuthorization = "X-Shopify-Access-Token"
-}
-
-enum ContentType: String {
-    case json = "application/json"
-}
-

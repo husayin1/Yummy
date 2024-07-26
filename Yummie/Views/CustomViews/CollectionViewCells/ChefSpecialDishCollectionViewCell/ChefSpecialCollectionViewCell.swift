@@ -25,7 +25,8 @@ class ChefSpecialCollectionViewCell: UICollectionViewCell {
     }
     
     func setupChefSpecialCollectionViewCell(special: SpecialMeal){
-        mealImageView.kf.setImage(with: special.strMealThumb.asUrl)
+//        mealImageView.kf.setImage(with: special.strMealThumb.asUrl)
+        self.mealImageView.setImage(special.strMealThumb)
         self.mealNameLabel.text = special.strMeal
         self.mealCategoryLabel.text = special.strCategory
         self.mealCountryLabel.text = special.strArea

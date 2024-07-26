@@ -74,6 +74,7 @@ extension FilterDishesViewController: FilterDishesViewNetworkDuties{
 extension FilterDishesViewController: FilterDishesViewNormalDuties{
     func registerNibs() {
         areasCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        
         ingredientsCollectionView.register(UINib(nibName: IngredientCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: IngredientCollectionViewCell.identifier)
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }

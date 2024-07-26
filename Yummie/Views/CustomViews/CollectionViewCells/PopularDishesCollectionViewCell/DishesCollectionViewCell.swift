@@ -26,6 +26,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
     func setupDishCollectionCell(dish: FilteredDishes){
         self.dishTitle.text = dish.strMeal
         dishImageView.kf.setImage(with: dish.strMealThumb.asUrl)
+        self.dishImageView.setImage(dish.strMealThumb)
         
     }
 
