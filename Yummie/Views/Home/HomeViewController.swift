@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var chefSpecialsCollectionView: UICollectionView!
     
     @IBOutlet weak var popularDishesLabel: UILabel!
-        
+    
     var selectedCategoryIndex:IndexPath?
     
     var homeViewModel: HomeViewModel!
