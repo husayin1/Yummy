@@ -164,10 +164,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         selectedCategoryIndex = indexPath
     }
 }
-/*
-extension HomeViewController: UICollectionViewDelegateFlowLayout{
-    
-}*/
+
 
 protocol HomeViewNetworkDuties {
     func renderCategoriesToCollectionView()

@@ -18,19 +18,20 @@ enum APIRoute: URLRequestConvertible {
     case getFilteredByArea(area: String)
     case getFilteredByIngredient(ingredient: String)
     case getMealById(mealId: String)
+    case getSearchByMeal(mealName: String)
     case getAreas
     case getIngredietns
     
     var method: HTTPMethod {
         switch self {
-        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
+        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient, .getSearchByMeal:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient:
+        case .getCategories, .getFilteredByCategory, .getRandomMeal, .getMealById, .getAreas, .getIngredietns, .getFilteredByArea, .getFilteredByIngredient, .getSearchByMeal:
             return URLEncoding.default
         }
     }
@@ -50,7 +51,9 @@ enum APIRoute: URLRequestConvertible {
         case .getIngredietns:
             return ["i":"list"]
         case .getFilteredByIngredient(let ingredient):
-            return ["i":ingredient]
+            return ["i": ingredient]
+        case .getSearchByMeal(let meal):
+            return ["s": meal]
         }
     }
     
@@ -66,6 +69,8 @@ enum APIRoute: URLRequestConvertible {
             return TheMealDb.mealById.endpoint
         case .getAreas, .getIngredietns:
             return TheMealDb.areas.endpoint
+        case .getSearchByMeal:
+            return TheMealDb.search.endpoint
         }
     }
     

@@ -18,6 +18,7 @@ enum TheMealDb {
     case mealById
     case areas
     case ingredients
+    case search
 
     var endpoint: String {
         switch self {
@@ -31,6 +32,8 @@ enum TheMealDb {
             return "lookup"
         case .areas, .ingredients:
             return "list"
+        case .search:
+            return "search"
         }
     }
 }

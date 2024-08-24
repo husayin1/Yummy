@@ -46,5 +46,16 @@ class ListDishesViewModel {
         }
     }
     
-   
+    func searchFor(meal:String){
+        APIClient.searchFor(meal: meal) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.meals = response.meals
+            case .failure(let err):
+                self?.meals = []
+                print("Error Searching For Meals: ",err.localizedDescription)
+            }
+        }
+    }
+    
 }

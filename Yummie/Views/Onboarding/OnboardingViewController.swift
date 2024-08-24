@@ -34,10 +34,10 @@ class OnboardingViewController: UIViewController {
         slides = [
             OnboardingSlide(title: "Delicious Dishes",
                             description: "Experience a variety of amazing dishes from different culutres around the world.", image: UIImage(named: "slide1") ?? .strokedCheckmark ),
-            OnboardingSlide(title: "World-Class Chefs",
-                            description: "Our dishes are prepared by only the best.", image: UIImage(named: "slide2") ?? .strokedCheckmark ),
-            OnboardingSlide(title: "Instant World-Wide Delivery",
-                            description: "Your orders will be delivered instantly irrespective of your location around the world.", image: UIImage(named: "slide3") ?? .strokedCheckmark)
+            OnboardingSlide(title: "Personalized Recipe Discovery",
+                            description: "Tell us your food preferences and we'll serve you delicious recipes ideas.", image: UIImage(named: "slide3") ?? .strokedCheckmark),
+            OnboardingSlide(title: "All Your Favorite Recipes In One Place",
+                            description: "Save time on planning by having your favorite recipes within reach", image: UIImage(named: "slide2") ?? .strokedCheckmark )
         ]
         pageControl.numberOfPages = slides.count
     }

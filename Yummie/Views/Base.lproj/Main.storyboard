@@ -156,7 +156,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-wi-GE8">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Area" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP7-7f-c0Q">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular Countries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP7-7f-c0Q">
                                                         <rect key="frame" x="16" y="16" width="361" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="HmO-zy-yQi"/>
@@ -198,7 +198,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WE-3K-bE6">
                                                 <rect key="frame" x="0.0" y="170" width="393" height="170"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVJ-yA-qVy">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVJ-yA-qVy">
                                                         <rect key="frame" x="16" y="16" width="361" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="g29-Gi-J3u"/>
@@ -240,7 +240,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OV3-k3-wVB">
                                                 <rect key="frame" x="0.0" y="340" width="393" height="322"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-as-RnW">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-as-RnW">
                                                         <rect key="frame" x="16" y="16" width="361" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="9Qy-lY-oWl"/>
@@ -302,7 +302,7 @@
                             <constraint firstItem="WkN-LR-f2h" firstAttribute="top" secondItem="mmh-pE-89l" secondAttribute="top" id="yWu-EG-5Vn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="hqs-1W-C8Z"/>
+                    <tabBarItem key="tabBarItem" title="Filter" image="magnifyingglass" catalog="system" id="hqs-1W-C8Z"/>
                     <navigationItem key="navigationItem" title="Search" id="cId-48-ss0">
                         <barButtonItem key="backBarButtonItem" title="  " id="9mQ-fy-4xj"/>
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="8wU-Rq-LcA">
@@ -336,7 +336,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtM-uz-xgr">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="158"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef's Specials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufe-gg-zpx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Inspiration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufe-gg-zpx">
                                                         <rect key="frame" x="16" y="16" width="361" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="3SW-dl-rF2"/>
@@ -561,7 +561,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-Hc-GmR">
-                                                        <rect key="frame" x="319.66666666666663" y="0.0" width="41.333333333333314" height="24"/>
+                                                        <rect key="frame" x="319.66666666666669" y="0.0" width="41.333333333333314" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.73865920309999999" green="0.19867694380000001" blue="0.096354193990000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -705,12 +705,20 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Yummie" id="onL-m7-ysQ">
                         <barButtonItem key="backBarButtonItem" title=" " id="l5X-zN-GqB"/>
-                        <barButtonItem key="rightBarButtonItem" image="heart.circle.fill" catalog="system" id="nkF-7E-9J4">
-                            <color key="tintColor" red="0.81352388860000002" green="0.22260588410000001" blue="0.1106312051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="fka-7i-Ay4" kind="show" id="nIB-Ad-EWW"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title=" " image="magnifyingglass" catalog="system" id="CKB-P8-ejf">
+                                <color key="tintColor" red="0.81352388860000002" green="0.22260588410000001" blue="0.1106312051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="pdz-vV-xge" kind="show" id="QFw-7D-foH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="heart.circle.fill" catalog="system" id="nkF-7E-9J4">
+                                <color key="tintColor" red="0.81352388860000002" green="0.22260588410000001" blue="0.1106312051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="fka-7i-Ay4" kind="show" id="nIB-Ad-EWW"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9WL-bo-KRS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

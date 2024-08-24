@@ -70,6 +70,10 @@ class APIClient {
     static func getIngredients(completion: @escaping (Result<IngredientRoot, NetworkError>) -> Void) {
         performRequest(route: APIRoute.getIngredietns, completion: completion)
     }
+    static func searchFor(meal: String,completion: @escaping (Result<FilteredDishesRoot, NetworkError>) -> Void) {
+        performRequest(route: APIRoute.getSearchByMeal(mealName: meal), completion: completion)
+    }
+
     
 }
 

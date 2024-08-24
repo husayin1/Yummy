@@ -26,7 +26,7 @@ class ListDishesViewController: UIViewController {
         viewModel.bindMealsToListDishesView = { [weak self] () in
             self?.renderTableViewData()
         }
-        title = "\(stringFilterWith ?? "New") Dishes"
+        title = "\(stringFilterWith ?? "Search For") Dishes"
         
         setupSearchController()
         
@@ -38,8 +38,13 @@ class ListDishesViewController: UIViewController {
         case .ingredient:
             viewModel.fetchAllFilteredDishesByCategory(ingredient: stringFilterWith)
         default:
-            break
+            viewModel.searchFor(meal: searchController.searchBar.text ?? "")
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.isActive = true
     }
     
     private func renderTableViewData(){
@@ -70,9 +75,16 @@ class ListDishesViewController: UIViewController {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredMeals = viewModel.meals?.filter { (meal: FilteredDishes) -> Bool in
-            return meal.strMeal.lowercased().contains(searchText.lowercased())
-        } ?? []
+        switch from {
+        case .area,.category, .ingredient:
+            
+            filteredMeals = viewModel.meals?.filter { (meal: FilteredDishes) -> Bool in
+                return meal.strMeal.lowercased().contains(searchText.lowercased())
+            } ?? []
+        default :
+            viewModel.searchFor(meal: searchText)
+            filteredMeals = viewModel.meals ?? []
+        }
         
         dishesTableView.reloadData()
     }
